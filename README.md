@@ -25,7 +25,10 @@ I'll add each one to the list below as I finish it.
 
 ## Projects so far
 
-Nothing here yet — this repo was just set up. First project goes in as soon as I finish it.
+### 1. Package Express
+A console app that works out a shipping quote for a package. It asks for the weight and then the width, height and length. If the package weighs more than 50 it stops and says it's too heavy, and if the three measurements add up to more than 50 it stops and says it's too big. Otherwise it multiplies the three dimensions together, multiplies that by the weight, divides by 100, and prints the result as a dollar amount.
+
+- **Code:** [PackageExpress/Program.cs](PackageExpress/Program.cs)
 
 ---
 
