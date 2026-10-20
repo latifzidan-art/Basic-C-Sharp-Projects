@@ -35,6 +35,11 @@ A console app built around a class with a void method that takes two integers. T
 
 - **Code:** [MethodParameters/Program.cs](MethodParameters/Program.cs)
 
+### 3. Employee and the IQuittable Interface
+An interface called `IQuittable` that defines a single void `Quit()` method, an `Employee` class that implements it, and a demonstration of polymorphism in `Main()`. The employee object is held in a variable declared as the interface type rather than as an `Employee`, and calling `Quit()` on it runs Employee's version of the method.
+
+- **Code:** [EmployeeQuittable](EmployeeQuittable) — `IQuittable.cs`, `Employee.cs`, `Program.cs`
+
 ---
 
 ## My other repositories
