@@ -30,6 +30,11 @@ A console app that works out a shipping quote for a package. It asks for the wei
 
 - **Code:** [PackageExpress/Program.cs](PackageExpress/Program.cs)
 
+### 2. Method Parameters
+A console app built around a class with a void method that takes two integers. The method squares the first number and displays the second one. `Main()` creates an object from the class and calls the method twice — once passing the numbers in order, and once naming each parameter so the order no longer matters.
+
+- **Code:** [MethodParameters/Program.cs](MethodParameters/Program.cs)
+
 ---
 
 ## My other repositories
