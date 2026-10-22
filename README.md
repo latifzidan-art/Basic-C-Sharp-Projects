@@ -40,6 +40,11 @@ An interface called `IQuittable` that defines a single void `Quit()` method, an 
 
 - **Code:** [EmployeeQuittable](EmployeeQuittable) — `IQuittable.cs`, `Employee.cs`, `Program.cs`
 
+### 4. Operator Overloading
+An `Employee` class with Id, FirstName and LastName that overloads the `==` and `!=` operators so two employees count as equal when their Id properties match. `Program.cs` builds employees with the same Id but different names, which shows the comparison really is running on Id rather than on object identity.
+
+- **Code:** [OperatorOverloading](OperatorOverloading) — `Employee.cs`, `Program.cs`
+
 ---
 
 ## My other repositories
