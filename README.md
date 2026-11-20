@@ -45,6 +45,11 @@ An `Employee` class with Id, FirstName and LastName that overloads the `==` and 
 
 - **Code:** [OperatorOverloading](OperatorOverloading) — `Employee.cs`, `Program.cs`
 
+### 5. Student Database (Entity Framework Code-First)
+A console app that builds a database from plain C# classes and adds one student. With Code-First you write the classes and let Entity Framework create the tables to match, instead of designing the database first and generating classes from it. `Student` and `Standard` are ordinary classes, `SchoolContext` inherits `DbContext` and exposes each one as a `DbSet`, and the database is created automatically the first time `SaveChanges()` runs.
+
+- **Code:** [StudentCodeFirst](StudentCodeFirst) — `Student.cs`, `Standard.cs`, `SchoolContext.cs`, `Program.cs`, `App.config`
+
 ---
 
 ## My other repositories
