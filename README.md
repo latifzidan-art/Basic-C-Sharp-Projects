@@ -1,54 +1,49 @@
-# Basic C# Projects
+# C# Projects
 
-This is the central repository for the coding projects I build during my Basic C# course at The Tech Academy.
+These are the projects I built while working through the Basic C# course at The Tech Academy. They start with small console applications covering the fundamentals of the language and move on to object oriented programming and working with a database through Entity Framework.
 
-As I work through the course I'll push each assignment and challenge here from my local machine, so everything stays in one place and this repo shows my progress over time. It's also part of my online portfolio, so nothing gets deleted as I go — every project stays up where it can be reviewed.
+🔗 **Portfolio website:** https://latifzidan-art.github.io/Portfolio/
 
-🔗 **My portfolio website:** https://latifzidan-art.github.io/Portfolio/
+## Projects:
 
----
+- [Package Express](PackageExpress)
+- [Method Parameters](MethodParameters)
+- [Employee and IQuittable](EmployeeQuittable)
+- [Operator Overloading](OperatorOverloading)
+- [Student Database (Code-First)](StudentCodeFirst)
 
-## What this repository will contain
+## Package Express
 
-Each project will live in its own folder. Going by what the course covers, I expect this to include:
+A console application that works out a shipping quote for a package. It asks the user for the weight and then the width, height and length, and refuses the package if it weighs more than 50 or if the three dimensions add up to more than 50. Anything that passes those checks gets priced by multiplying the dimensions together, multiplying that by the weight and dividing by 100, and the result is displayed back as a dollar amount.
 
-- **C# fundamentals** — variables, data types, operators, and type conversion
-- **Control flow** — if/else statements, switch statements, for and while loops
-- **Methods** — writing my own methods, parameters, return values
-- **Collections** — arrays and lists, and looping through them
-- **Object oriented programming** — classes, objects, properties, constructors, inheritance
-- **Exception handling** — try/catch blocks and dealing with bad input instead of crashing
-- **Console applications** — small programs that run in the terminal
-- **Web projects in Visual Studio** — pages built with ASP.NET, along with the HTML, CSS and JavaScript that goes with them
+## Method Parameters
 
-I'll add each one to the list below as I finish it.
+A console application built around a class containing a void method that takes two integers. The method does a math operation on the first number and displays the second. `Main()` creates an object from the class and calls the method twice, once passing the values in order and once naming each parameter, which shows that named arguments make the order irrelevant.
 
-## Projects so far
+## Employee and IQuittable
 
-### 1. Package Express
-A console app that works out a shipping quote for a package. It asks for the weight and then the width, height and length. If the package weighs more than 50 it stops and says it's too heavy, and if the three measurements add up to more than 50 it stops and says it's too big. Otherwise it multiplies the three dimensions together, multiplies that by the weight, divides by 100, and prints the result as a dollar amount.
+An interface called `IQuittable` that defines a single `Quit()` method, and an `Employee` class that implements it. The interesting part is in `Main()`, where the employee is held in a variable declared as the interface type rather than as an `Employee`. Calling `Quit()` on that variable still runs Employee's version of the method, which is polymorphism in action.
 
-- **Code:** [PackageExpress/Program.cs](PackageExpress/Program.cs)
+## Operator Overloading
 
-### 2. Method Parameters
-A console app built around a class with a void method that takes two integers. The method squares the first number and displays the second one. `Main()` creates an object from the class and calls the method twice — once passing the numbers in order, and once naming each parameter so the order no longer matters.
+An `Employee` class that overloads the `==` and `!=` operators so two employees count as equal when their Id properties match, rather than only when they are the same object in memory. `Equals` and `GetHashCode` are overridden alongside them so all three stay consistent, and the null checks use `ReferenceEquals` to stop the `==` operator from calling itself in a loop.
 
-- **Code:** [MethodParameters/Program.cs](MethodParameters/Program.cs)
+## Student Database (Code-First)
 
-### 3. Employee and the IQuittable Interface
-An interface called `IQuittable` that defines a single void `Quit()` method, an `Employee` class that implements it, and a demonstration of polymorphism in `Main()`. The employee object is held in a variable declared as the interface type rather than as an `Employee`, and calling `Quit()` on it runs Employee's version of the method.
+A console application that uses Entity Framework 6 and a Code-First workflow. Rather than designing a database and generating classes from it, the plain C# classes come first and Entity Framework builds the tables to match them. `SchoolContext` inherits from `DbContext` and exposes each class as a `DbSet`, and the database is created automatically the first time `SaveChanges()` is called.
 
-- **Code:** [EmployeeQuittable](EmployeeQuittable) — `IQuittable.cs`, `Employee.cs`, `Program.cs`
+## Technical skills gained
 
-### 4. Operator Overloading
-An `Employee` class with Id, FirstName and LastName that overloads the `==` and `!=` operators so two employees count as equal when their Id properties match. `Program.cs` builds employees with the same Id but different names, which shows the comparison really is running on Id rather than on object identity.
-
-- **Code:** [OperatorOverloading](OperatorOverloading) — `Employee.cs`, `Program.cs`
-
-### 5. Student Database (Entity Framework Code-First)
-A console app that builds a database from plain C# classes and adds one student. With Code-First you write the classes and let Entity Framework create the tables to match, instead of designing the database first and generating classes from it. `Student` and `Standard` are ordinary classes, `SchoolContext` inherits `DbContext` and exposes each one as a `DbSet`, and the database is created automatically the first time `SaveChanges()` runs.
-
-- **Code:** [StudentCodeFirst](StudentCodeFirst) — `Student.cs`, `Standard.cs`, `SchoolContext.cs`, `Program.cs`, `App.config`
+- **C# fundamentals** — variables, data types, type conversion, operators, string formatting
+- **Control flow** — if/else branching, loops, and validating user input before acting on it
+- **Methods** — parameters, return values, void methods, and named arguments
+- **Object oriented programming** — classes, objects, constructors, properties, interfaces, inheritance and polymorphism
+- **Operator overloading** — overloading comparison operators in pairs, and keeping `Equals` and `GetHashCode` in step with them
+- **Entity Framework 6** — Code-First workflow, `DbContext` and `DbSet`, naming conventions, navigation properties and relationships
+- **ASP.NET MVC** — models, views and controllers, passing data to a view, and adding business logic to a controller
+- **Databases** — connection strings, and reading and writing rows from application code
+- **Debugging in Visual Studio** — setting breakpoints, stepping through code with Step Into, and inspecting variables while the program is paused
+- **Git and GitHub** — committing work as I go and pushing it to a remote repository
 
 ---
 
